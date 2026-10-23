@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { businesses } from "@/lib/data";
 
 const navCards = [
   { title: "Directory", desc: "Find local businesses and services", href: "/directory", icon: "🏢" },
@@ -7,6 +8,7 @@ const navCards = [
   { title: "City Hall", desc: "Municipal updates and services", href: "/notices", icon: "🏛️" },
   { title: "Community Calendar", desc: "Events and happenings", href: "/calendar", icon: "📅" },
   { title: "Classifieds", desc: "Buy, sell, and local listings", href: "/classifieds", icon: "📰" },
+  { title: "Local Jobs", desc: "Find your next job in Regina", href: "/jobs", icon: "💼" },
 ];
 
 const localFeed = [
@@ -25,7 +27,7 @@ const localFeed = [
     image: "https://picsum.photos/seed/regina-riders/800/450",
   },
   {
-    source: "Community",
+    source: "Leader-Post",
     time: "1 day ago",
     title: "Neighbors organizing fall cleanup on Wascana Parkway",
     summary: "Residents are coordinating a weekend cleanup event for the green space.",
@@ -33,13 +35,15 @@ const localFeed = [
   },
 ];
 
+const featured = businesses.filter((b) => b.package === "premium");
+
 export default function Home() {
   return (
     <div className="space-y-12">
       <section>
         <h1 className="text-3xl font-semibold mb-2">Regina Local</h1>
         <p className="text-stone-600 mb-8">Discover local businesses, exclusive deals, and public updates in your city.</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {navCards.map((card) => (
             <Link
               key={card.title}
@@ -50,30 +54,6 @@ export default function Home() {
               <div className="font-semibold">{card.title}</div>
               <div className="text-sm text-stone-500 mt-1">{card.desc}</div>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-semibold">Local Feed</h2>
-          <span className="text-xs text-stone-400">Inspired by neighborhood networks</span>
-        </div>
-        <div className="space-y-6">
-          {localFeed.map((item, i) => (
-            <div key={i} className="bg-white border border-stone-200 rounded-lg overflow-hidden">
-              <img src={item.image} alt="" className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <div className="flex items-center gap-2 text-sm text-stone-500 mb-2">
-                  <span className="font-medium text-stone-700">{item.source}</span>
-                  <span>•</span>
-                  <span>{item.time}</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                <p className="text-stone-600 text-sm">{item.summary}</p>
-                <button className="mt-3 text-sm text-amber-700 font-medium">Read article</button>
-              </div>
-            </div>
           ))}
         </div>
       </section>
@@ -89,6 +69,66 @@ export default function Home() {
           />
           <button className="bg-stone-900 text-white px-4 py-2 rounded text-sm font-medium">
             Invite
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-6">Local News</h2>
+        <div className="grid md:grid-cols-4 gap-6">
+          <div className="md:col-span-3 space-y-6">
+            {localFeed.map((item, i) => (
+              <div key={i} className="bg-white border border-stone-200 rounded-lg overflow-hidden">
+                <img src={item.image} alt="" className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <div className="flex items-center gap-2 text-sm text-stone-500 mb-2">
+                    <img src="/leaderpost-logo.svg" alt="" className="h-5 w-auto" />
+                    <span className="font-medium text-stone-700">{item.source}</span>
+                    <span>•</span>
+                    <span>{item.time}</span>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                  <p className="text-stone-600 text-sm">{item.summary}</p>
+                  <button className="mt-3 text-sm text-amber-700 font-medium">Read article</button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="md:col-span-1 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-center">
+              <div className="text-xs uppercase tracking-wide text-amber-700 mb-2">Advertisement</div>
+              <div className="bg-white border border-amber-200 rounded p-4">
+                <div className="font-semibold text-sm mb-1">Feature Your Business</div>
+                <p className="text-xs text-stone-600 mb-3">Reach Regina customers</p>
+                <Link href="/packages" className="text-xs bg-stone-900 text-white px-3 py-1.5 rounded">Show your business here</Link>
+              </div>
+            </div>
+            <div className="bg-white border border-stone-200 rounded-lg p-4">
+              <div className="text-xs uppercase tracking-wide text-stone-500 mb-3">Featured Business</div>
+              {featured.slice(0, 1).map((b) => (
+                <Link key={b.slug} href={`/business/${b.slug}`} className="block">
+                  <div className="font-semibold text-sm">{b.name}</div>
+                  <div className="text-xs text-stone-500">{b.category}</div>
+                  <p className="text-xs text-stone-600 mt-1">{b.description.slice(0, 80)}...</p>
+                </Link>
+              ))}
+              <Link href="/packages" className="text-xs text-amber-700 mt-3 inline-block">Show your business here</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border border-stone-200 rounded-lg p-6">
+        <h2 className="text-xl font-semibold mb-2">Local Newsletter</h2>
+        <p className="text-stone-600 text-sm mb-4">Sign up for our local newsletter to get highlights and offers directly to your inbox.</p>
+        <div className="flex gap-2 max-w-md">
+          <input
+            type="email"
+            placeholder="your@email.com"
+            className="flex-1 px-3 py-2 border border-stone-300 rounded text-sm"
+          />
+          <button className="bg-stone-900 text-white px-4 py-2 rounded text-sm font-medium">
+            Sign up
           </button>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { businesses } from "@/lib/data";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export default function BusinessPage({ params }: { params: { slug: string } }) {
   const business = businesses.find((b) => b.slug === params.slug);
@@ -23,6 +24,9 @@ export default function BusinessPage({ params }: { params: { slug: string } }) {
             ))}
           </ul>
         </div>
+      </div>
+      <div className="mt-6 text-sm">
+        <Link href="/packages" className="text-amber-700 hover:underline">Own this business? Upgrade your listing</Link>
       </div>
     </div>
   );

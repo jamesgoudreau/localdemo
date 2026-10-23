@@ -119,9 +119,9 @@ export const packages = [
 ];
 
 export const coupons = [
-  { business: "Lawntec Yard & Landscape", offer: "15% off spring cleanup", code: "SPRING15" },
-  { business: "Sterling Plumbing & Heating", offer: "Free water heater inspection", code: "HEATCHECK" },
-  { business: "Regina Humane Society", offer: "Adopt a pet this month, get a starter kit", code: "ADOPT2026" },
+  { business: "Lawntec Yard & Landscape", offer: "15% off spring cleanup", code: "SPRING15", expires: "May 31, 2026", logo: "L" },
+  { business: "Sterling Plumbing & Heating", offer: "Free water heater inspection", code: "HEATCHECK", expires: "Nov 30, 2026", logo: "S" },
+  { business: "Regina Humane Society", offer: "Adopt a pet this month, get a starter kit", code: "ADOPT2026", expires: "Dec 15, 2026", logo: "RHS" },
 ];
 
 export const notices = [
@@ -132,6 +132,14 @@ export const notices = [
 export const events = [
   { title: "Queen City Fibre Festival", date: "Oct 25, 2026", location: "Mosaic Stadium Area" },
   { title: "Regina Farmers' Market", date: "Every Saturday", location: "Victoria Park" },
+];
+
+export const jobs = [
+  { title: "Truck and Transport Apprentice, Fleet Maintenance", company: "GFL Environmental", location: "Regina, SK", type: "Full-time", source: "Talent.com" },
+  { title: "Product Tester - No experience - Work from Home", company: "Great Lion Canada", location: "Remote", type: "Part-time", source: "Talent.com" },
+  { title: "Independent Contractor - Shopper and Delivery Driver", company: "Instacart Shoppers", location: "Regina, SK", type: "Contract", source: "Talent.com" },
+  { title: "Registered Nurse - Emergency Department", company: "Saskatchewan Health Authority", location: "Regina, SK", type: "Full-time", source: "Leader-Post Jobs" },
+  { title: "Marketing Coordinator", company: "Local Marketing Firm", location: "Regina, SK", type: "Full-time", source: "Leader-Post Jobs" },
 ];
 
 export const classifieds = [

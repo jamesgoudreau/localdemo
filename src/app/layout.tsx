@@ -31,7 +31,7 @@ export default function RootLayout({
               <nav className="hidden md:flex gap-6 text-sm">
                 <a href="/" className="hover:text-amber-600">Home</a>
                 <a href="/directory" className="hover:text-amber-600">Directory</a>
-                <a href="/packages" className="hover:text-amber-600">For Businesses</a>
+                <a href="/jobs" className="hover:text-amber-600">Local Jobs</a>
                 <a href="/coupons" className="hover:text-amber-600">Offers</a>
                 <a href="/notices" className="hover:text-amber-600">Notices</a>
                 <a href="/calendar" className="hover:text-amber-600">Calendar</a>
