@@ -130,8 +130,42 @@ export const notices = [
 ];
 
 export const events = [
-  { title: "Queen City Fibre Festival", date: "Oct 25, 2026", location: "Mosaic Stadium Area" },
-  { title: "Regina Farmers' Market", date: "Every Saturday", location: "Victoria Park" },
+  {
+    title: "Queen City Fibre Festival",
+    month: "OCT",
+    day: "25",
+    date: "Oct 25, 2026",
+    time: "10:00 AM - 5:00 PM",
+    location: "Mosaic Stadium Area",
+    description: "Local makers, fibre artists, and workshops celebrating Regina's creative community.",
+  },
+  {
+    title: "Regina Farmers' Market",
+    month: "SAT",
+    day: "Every",
+    date: "Every Saturday",
+    time: "8:00 AM - 1:00 PM",
+    location: "Victoria Park",
+    description: "Fresh produce, baked goods, and local vendors every Saturday morning.",
+  },
+  {
+    title: "Wascana Centre Fall Cleanup",
+    month: "NOV",
+    day: "2",
+    date: "Nov 2, 2026",
+    time: "9:00 AM - 12:00 PM",
+    location: "Wascana Parkway",
+    description: "Community volunteer event to tidy trails and shoreline before winter.",
+  },
+  {
+    title: "Roughriders Fan Appreciation Night",
+    month: "NOV",
+    day: "8",
+    date: "Nov 8, 2026",
+    time: "6:00 PM",
+    location: "Mosaic Stadium",
+    description: "Season wrap-up celebration with player appearances and giveaways.",
+  },
 ];
 
 export const jobs = [
