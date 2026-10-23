@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import AuthGate from "@/components/AuthGate";
+import IconNav from "@/components/IconNav";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
+          <IconNav />
           <main className="max-w-7xl mx-auto px-4 py-8">{children}</main>
           <footer className="border-t border-stone-200 mt-16">
             <div className="bg-black text-white text-xs py-2 px-4">
