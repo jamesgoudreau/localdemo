@@ -5,26 +5,29 @@ const localFeed = [
   {
     source: "Leader-Post",
     time: "2 days ago",
-    title: "Downtown revitalization project moves to next phase",
-    summary: "City council approved additional funding for the 11th Avenue corridor upgrades.",
-    image: "https://picsum.photos/seed/regina-downtown/800/450",
-    comments: 3,
+    title: "Regina’s 11th Avenue construction declared complete and under budget: city",
+    summary: "The city says final cosmetic touches are all that's left and will be done by next spring.",
+    image: "https://leaderpost.com/wp-content/uploads/sites/4/2026/10/20261016_hcy009.rg_305792727.jpg?w=1024",
+    url: "https://leaderpost.com/news/reginas-11th-avenue-construction-declared-complete-and-under-budget-city/",
+    comments: 4,
   },
   {
     source: "Leader-Post",
-    time: "2 days ago",
-    title: "Roughriders prepare for playoff push",
-    summary: "Local coverage of the team's final regular season preparations.",
-    image: "https://picsum.photos/seed/regina-riders/800/450",
+    time: "1 day ago",
+    title: "Council ends talk of upping taxes on downtown parking lots",
+    summary: "Stakeholders surveyed said the idea likely would not help boost downtown development as intended.",
+    image: "https://leaderpost.com/wp-content/uploads/sites/4/2026/10/20261022_hcy005.rg_305893519.jpg?w=1024",
+    url: "https://leaderpost.com/news/regina-city-hall/regina-city-council-ends-talk-of-upping-taxes-on-downtown-parking-lots/",
     comments: 7,
   },
   {
     source: "Leader-Post",
     time: "3 days ago",
-    title: "Neighbors organizing fall cleanup on Wascana Parkway",
-    summary: "Residents are coordinating a weekend cleanup event for the green space.",
-    image: "https://picsum.photos/seed/regina-community/800/450",
-    comments: 1,
+    title: "Historic flags returned to legislature after long absence",
+    summary: "The Royal Regina Rifles’ regimental colours have come home to the Saskatchewan Legislative Building.",
+    image: "https://leaderpost.com/wp-content/uploads/sites/4/2026/10/20261021_hcy007.rg_305877331.jpg",
+    url: "https://leaderpost.com/news/saskatchewan-news/homecoming-historic-military-flags-returned-to-saskatchewan-legislature-after-lengthy-absence/",
+    comments: 2,
   },
 ];
 
@@ -58,7 +61,13 @@ export default function Home() {
         <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-3 space-y-6">
             {localFeed.map((item, i) => (
-              <div key={i} className="bg-white border border-stone-200 rounded-xl overflow-hidden">
+              <a
+                key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white border-2 border-stone-800 rounded-xl overflow-hidden hover:shadow-md transition"
+              >
                 <div className="p-4 flex items-center gap-3">
                   <img src="/leaderpost-logo.svg" alt="" className="h-8 w-auto" />
                   <div>
@@ -71,24 +80,24 @@ export default function Home() {
                 </div>
                 <div className="relative">
                   <img src={item.image} alt="" className="w-full h-64 object-cover" />
-                  <button className="absolute bottom-3 left-3 bg-stone-900/80 text-white text-xs px-3 py-1.5 rounded">
+                  <span className="absolute bottom-3 left-3 bg-stone-900/80 text-white text-xs px-3 py-1.5 rounded">
                     Read article
-                  </button>
+                  </span>
                 </div>
                 <div className="px-4 py-3 flex items-center gap-6 text-stone-500 text-sm border-t border-stone-100">
-                  <button className="flex items-center gap-1 hover:text-stone-700">
+                  <span className="flex items-center gap-1">
                     <span className="text-lg">♡</span>
-                  </button>
-                  <button className="flex items-center gap-1 hover:text-stone-700">
+                  </span>
+                  <span className="flex items-center gap-1">
                     <span className="text-lg">💬</span>
                     <span>{item.comments}</span>
-                  </button>
-                  <button className="ml-auto flex items-center gap-1 hover:text-stone-700">
+                  </span>
+                  <span className="ml-auto flex items-center gap-1">
                     <span className="text-lg">↗</span>
-                  </button>
+                  </span>
                 </div>
                 <div className="px-4 pb-4 text-sm text-stone-600">{item.summary}</div>
-              </div>
+              </a>
             ))}
           </div>
           <div className="md:col-span-1 space-y-6">
@@ -110,16 +119,9 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            <div className="bg-stone-100 border border-stone-200 rounded-xl p-4 text-center min-h-[200px] flex flex-col justify-center">
-              <div className="text-xs uppercase tracking-wide text-stone-500 mb-3">Advertisement</div>
-              <div className="bg-white border border-stone-200 rounded p-4">
-                <div className="font-semibold text-sm mb-1">Feature Your Business</div>
-                <p className="text-xs text-stone-600 mb-3">Reach Regina customers on Leader-Post Local</p>
-                <Link href="/packages" className="text-xs bg-stone-900 text-white px-3 py-1.5 rounded inline-block">
-                  Show your business here
-                </Link>
-              </div>
-            </div>
+            <a href="https://www.vw.ca" target="_blank" rel="noopener noreferrer" className="block">
+              <img src="/vw-ad.png" alt="Volkswagen advertisement" className="w-full rounded-xl border border-stone-200" />
+            </a>
           </div>
         </div>
       </section>

@@ -26,7 +26,7 @@ export default function CouponsPage() {
             className="text-left bg-white border-2 border-dashed border-amber-400 rounded-lg p-5 hover:shadow-md transition"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center font-bold text-amber-800 text-sm">
+              <div className={`w-12 h-12 ${c.color} rounded-full flex items-center justify-center font-bold text-white text-sm`}>
                 {c.logo}
               </div>
               <div className="font-semibold">{c.business}</div>
@@ -44,7 +44,7 @@ export default function CouponsPage() {
             <button onClick={() => setOpenCoupon(null)} className="absolute top-3 right-3 text-stone-400 hover:text-stone-600">✕</button>
             <div className="border-4 border-dashed border-amber-400 p-6 text-center">
               <div className="text-xs uppercase tracking-widest text-amber-600 mb-2">Coupon</div>
-              <div className="w-16 h-16 bg-amber-100 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-amber-800">
+              <div className={`w-16 h-16 ${coupons[openCoupon].color} rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-white`}>
                 {coupons[openCoupon].logo}
               </div>
               <div className="font-bold text-xl mb-1">{coupons[openCoupon].business}</div>

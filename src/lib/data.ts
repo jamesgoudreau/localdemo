@@ -119,9 +119,9 @@ export const packages = [
 ];
 
 export const coupons = [
-  { business: "Lawntec Yard & Landscape", offer: "15% off spring cleanup", code: "SPRING15", expires: "May 31, 2026", logo: "L" },
-  { business: "Sterling Plumbing & Heating", offer: "Free water heater inspection", code: "HEATCHECK", expires: "Nov 30, 2026", logo: "S" },
-  { business: "Regina Humane Society", offer: "Adopt a pet this month, get a starter kit", code: "ADOPT2026", expires: "Dec 15, 2026", logo: "RHS" },
+  { business: "Lawntec Yard & Landscape", offer: "15% off spring cleanup", code: "SPRING15", expires: "May 31, 2026", logo: "LT", color: "bg-emerald-600" },
+  { business: "Sterling Plumbing & Heating", offer: "Free water heater inspection", code: "HEATCHECK", expires: "Nov 30, 2026", logo: "SP", color: "bg-blue-700" },
+  { business: "Regina Humane Society", offer: "Adopt a pet this month, get a starter kit", code: "ADOPT2026", expires: "Dec 15, 2026", logo: "RHS", color: "bg-amber-700" },
 ];
 
 export const notices = [
