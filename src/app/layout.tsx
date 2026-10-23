@@ -20,16 +20,14 @@ export default function RootLayout({
       <body className={`${geist.className} bg-stone-50 text-stone-900 antialiased`}>
         <AuthGate>
           <header className="bg-white border-b border-stone-200 sticky top-0 z-10">
-            <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-amber-500 rounded flex items-center justify-center text-white font-bold text-sm">
-                  LP
-                </div>
-                <div>
-                  <div className="font-semibold text-lg">Leader-Post Local</div>
-                  <div className="text-xs text-stone-500">Regina & Area</div>
-                </div>
-              </div>
+            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+              <a href="/" className="flex items-center">
+                <img
+                  src="/leaderpost-logo.svg"
+                  alt="Regina Leader-Post"
+                  className="h-10 w-auto"
+                />
+              </a>
               <nav className="hidden md:flex gap-6 text-sm">
                 <a href="/" className="hover:text-amber-600">Home</a>
                 <a href="/directory" className="hover:text-amber-600">Directory</a>
