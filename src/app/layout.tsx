@@ -39,9 +39,65 @@ export default function RootLayout({
             </div>
           </header>
           <main className="max-w-7xl mx-auto px-4 py-8">{children}</main>
-          <footer className="border-t border-stone-200 mt-16 py-8 text-center text-sm text-stone-500">
-            <p>Leader-Post Local is a demonstration of local resources for Regina. Listing data inspired by local directories. Credit to Yellow Pages for partnership data model.</p>
-            <p className="mt-2">A Postmedia Network property. Editorial ethos preserved.</p>
+          <footer className="border-t border-stone-200 mt-16">
+            <div className="bg-black text-white text-xs py-2 px-4">
+              {/* top black bar */}
+            </div>
+            <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+              <div>
+                <div className="font-semibold uppercase tracking-wide text-xs mb-3">Navigate</div>
+                <ul className="space-y-2 text-stone-600">
+                  <li><a href="#" className="hover:text-amber-600">Saskatchewan News</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Local News</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Business</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Sports</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Arts & Life</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Opinion</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Top Employers</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Puzzmo</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Comics</a></li>
+                </ul>
+              </div>
+              <div>
+                <div className="font-semibold uppercase tracking-wide text-xs mb-3">Services</div>
+                <ul className="space-y-2 text-stone-600">
+                  <li><a href="#" className="hover:text-amber-600">Contact Us</a></li>
+                  <li><a href="/packages" className="hover:text-amber-600">Advertise With Us</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Manage My Subscriptions</a></li>
+                  <li><a href="#" className="hover:text-amber-600">FAQ</a></li>
+                </ul>
+              </div>
+              <div>
+                <div className="font-semibold uppercase tracking-wide text-xs mb-3">More from the Leader-Post</div>
+                <ul className="space-y-2 text-stone-600">
+                  <li><a href="#" className="hover:text-amber-600">Newsletters</a></li>
+                  <li><a href="/classifieds" className="hover:text-amber-600">Classifieds</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Car News & Reviews</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Personal Health</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Canoe - Travel</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Canoe - Shopping</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Leader-Post Store</a></li>
+                </ul>
+              </div>
+              <div>
+                <div className="font-semibold uppercase tracking-wide text-xs mb-3">Legal</div>
+                <ul className="space-y-2 text-stone-600">
+                  <li><a href="#" className="hover:text-amber-600">Sitemap</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Copyright & Licensing</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Privacy Policy</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Terms of Use</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Community Guidelines</a></li>
+                  <li><a href="#" className="hover:text-amber-600">Cookie Policy</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className="text-center py-6">
+              <div className="text-2xl font-serif font-bold tracking-wide">THE LEADER-POST</div>
+            </div>
+            <div className="border-t border-stone-200 py-4 px-4 text-xs text-stone-500 flex justify-between max-w-7xl mx-auto">
+              <span>© Copyright & Licensing 2026, Postmedia Network Inc.</span>
+              <span>All rights reserved.</span>
+            </div>
           </footer>
         </AuthGate>
       </body>
